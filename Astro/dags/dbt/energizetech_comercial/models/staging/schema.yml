@@ -1,0 +1,110 @@
+version: 2
+
+models:
+  - name: staging_clientes
+    description: "Tabela de staging para clientes"
+    columns:
+      - name: id_cliente
+        description: "Identificador único do cliente"
+      - name: nome
+        description: "Nome do cliente"
+      - name: email
+        description: "Endereço de e-mail do cliente"
+      - name: telefone
+        description: "Número de telefone do cliente"
+      - name: endereco
+        description: "Endereço do cliente"
+      - name: data_cadastro
+        description: "Data de cadastro do cliente"
+      - name: tipo_cliente
+        description: "Tipo de cliente"
+      - name: metodo_pagamento_preferido
+        description: "Método de pagamento preferido do cliente"
+
+  - name: staging_inventario
+    description: "Tabela de staging para inventário"
+    columns:
+      - name: id_inventario
+        description: "Identificador único do item no inventário"
+      - name: id_produto
+        description: "Identificador do produto"
+      - name: quantidade
+        description: "Quantidade em estoque"
+      - name: data_atualizacao
+        description: "Data da última atualização do inventário"
+
+  - name: staging_vendas
+    description: "Tabela de staging para vendas"
+    columns:
+      - name: id_venda
+        description: "Identificador único da venda"
+      - name: id_cliente
+        description: "Identificador do cliente"
+      - name: id_produto
+        description: "Identificador do produto"
+      - name: quantidade
+        description: "Quantidade vendida"
+      - name: valor_total
+        description: "Valor total da venda"
+      - name: data_venda
+        description: "Data da venda"
+
+  - name: staging_produtos
+    description: "Tabela de staging para produtos"
+    columns:
+      - name: id_produto
+        description: "Identificador único do produto"
+      - name: nome_produto
+        description: "Nome do produto"
+      - name: descricao
+        description: "Descrição do produto"
+      - name: preco
+        description: "Preço do produto"
+      - name: categoria
+        description: "Categoria do produto"
+
+  - name: staging_devolucoes
+    description: "Tabela de staging para devoluções"
+    columns:
+      - name: id_devolucao
+        description: "Identificador único da devolução"
+      - name: id_venda
+        description: "Identificador da venda relacionada"
+      - name: id_produto
+        description: "Identificador do produto devolvido"
+      - name: quantidade
+        description: "Quantidade devolvida"
+      - name: motivo
+        description: "Motivo da devolução"
+      - name: data_devolucao
+        description: "Data da devolução"
+
+  - name: staging_vendedores
+    description: "Tabela de staging para vendedores"
+    columns:
+      - name: id_vendedor
+        description: "Identificador único do vendedor"
+      - name: nome
+        description: "Nome do vendedor"
+      - name: email
+        description: "E-mail do vendedor"
+      - name: telefone
+        description: "Telefone do vendedor"
+      - name: data_contratacao
+        description: "Data de contratação do vendedor"
+
+  - name: staging_transacoes
+    description: "Tabela de staging para transações"
+    columns:
+      - name: id_transacao
+        description: "Identificador único da transação"
+      - name: id_venda
+        description: "Identificador da venda relacionada"
+      - name: metodo_pagamento
+        description: "Método de pagamento utilizado"
+      - name: valor
+        description: "Valor da transação"
+      - name: data_transacao
+        description: "Data da transação"
+      - name: status
+        description: "Status da transação"

@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: public
+    tables:
+      - name: customers
+      - name: inventory
+      - name: sales
+      - name: products
+      - name: returns
+      - name: salespersons
+      - name: transactions

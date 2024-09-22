@@ -1,0 +1,30 @@
+[0m13:47:17.373905 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CFE114FA70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CFE114C1A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CFE1911610>]}
+
+
+============================== 13:47:17.378498 | 11cd0c8f-b88b-4b0b-af86-b3c3eba23afd ==============================
+[0m13:47:17.378498 [info ] [MainThread]: Running with dbt=1.8.0
+[0m13:47:17.378498 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\andre\\.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt init EnergizeTech-comercial', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m13:47:17.397614 [warn ] [MainThread]: [ConfigFolderDirectory]: Unable to parse dict {'dir': WindowsPath('C:/Users/andre/.dbt')}
+[0m13:47:17.397614 [info ] [MainThread]: Creating dbt configuration folder at 
+[0m13:47:33.194183 [debug] [MainThread]: Starter project path: C:\Users\andre\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\include\starter_project
+[0m13:47:33.229893 [info ] [MainThread]: 
+Your new dbt project "energizetech_comercial" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m13:47:33.231902 [info ] [MainThread]: Setting up your profile.
+[0m13:48:25.645171 [info ] [MainThread]: Profile energizetech_comercial written to C:\Users\andre\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m13:48:25.646214 [debug] [MainThread]: Command `dbt init` succeeded at 13:48:25.646214 after 68.38 seconds
+[0m13:48:25.646732 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CFE1849910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CFDE9FE390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CFE1A2A6C0>]}
+[0m13:48:25.647248 [debug] [MainThread]: Flushing usage events

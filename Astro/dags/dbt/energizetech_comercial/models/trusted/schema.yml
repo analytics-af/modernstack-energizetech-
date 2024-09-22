@@ -1,0 +1,171 @@
+version: 2
+
+models:
+  - name: dim_calendario
+    description: "Dimensão de calendário"
+    columns:
+      - name: sk_data
+        description: "Chave surrogate da data"
+      - name: data_completa
+        description: "Data completa"
+      - name: ano
+        description: "Ano"
+      - name: mes
+        description: "Mês"
+      - name: dia
+        description: "Dia"
+      - name: nome_mes
+        description: "Nome do mês"
+      - name: nome_dia_semana
+        description: "Nome do dia da semana"
+      - name: dia_semana
+        description: "Dia da semana (0-6)"
+      - name: trimestre
+        description: "Trimestre"
+      - name: semana_ano
+        description: "Semana do ano"
+      - name: quadrimestre
+        description: "Quadrimestre"
+      - name: semestre
+        description: "Semestre"
+      - name: e_fim_de_semana
+        description: "Indica se é fim de semana"
+      - name: e_natal
+        description: "Indica se é Natal"
+      - name: e_ano_novo
+        description: "Indica se é Ano Novo"
+
+
+  - name: dim_clientes
+    description: "Dimensão de clientes"
+    columns:
+      - name: sk_cliente
+        description: "Chave surrogate do cliente"
+      - name: id_cliente
+        description: "Identificador original do cliente"
+      - name: nome
+        description: "Nome do cliente"
+      - name: email
+        description: "E-mail do cliente"
+      - name: telefone
+        description: "Telefone do cliente"
+      - name: endereco
+        description: "Endereço do cliente"
+      - name: data_cadastro
+        description: "Data de cadastro do cliente"
+      - name: tipo_cliente
+        description: "Tipo de cliente"
+      - name: metodo_pagamento_preferido
+        description: "Método de pagamento preferido do cliente"
+      - name: data_atualizacao
+        description: "Data da última atualização do cliente"
+      - name: data_inicio_validade
+        description: "Data de início da validade do registro"
+      - name: data_fim_validade
+        description: "Data de fim da validade do registro"
+
+  - name: dim_produtos
+    description: "Dimensão de produtos"
+    columns:
+      - name: sk_produto
+        description: "Chave surrogate do produto"
+      - name: id_produto
+        description: "Identificador original do produto"
+      - name: nome_produto
+        description: "Nome do produto"
+      - name: categoria
+        description: "Categoria do produto"
+      - name: preco
+        description: "Preço do produto"
+      - name: quantidade_estoque
+        description: "Quantidade em estoque do produto"
+      - name: fornecedor
+        description: "Fornecedor do produto"
+      - name: periodo_garantia
+        description: "Período de garantia do produto"
+      - name: capacidade_bateria
+        description: "Capacidade da bateria do produto"
+      - name: voltagem
+        description: "Voltagem do produto"
+
+
+  - name: dim_vendedores
+    description: "Dimensão de vendedores"
+    columns:
+      - name: sk_vendedor
+        description: "Chave surrogate do vendedor"
+      - name: id_vendedor
+        description: "Identificador original do vendedor"
+      - name: nome_vendedor
+        description: "Nome do vendedor"
+      - name: email
+        description: "E-mail do vendedor"
+      - name: telefone
+        description: "Telefone do vendedor"
+      - name: regiao
+        description: "Estado onde se localiza ovendedor"
+      - name: data_contratacao
+        description: "Data de contratação do vendedor"
+
+  - name: fato_vendas
+    description: "Fato de vendas"
+    columns:
+      - name: sk_cliente
+        description: "Chave surrogate do cliente"
+      - name: sk_produto
+        description: "Chave surrogate do produto"
+      - name: sk_vendedor
+        description: "Chave surrogate do vendedor"
+      - name: data_venda
+        description: "Data da venda"
+      - name: data_transacao
+        description: "Data da transação"
+      - name: metodo_pagamento
+        description: "Método de pagamento"
+      - name: status_transacao
+        description: "Status da transação"
+      - name: quantidade
+        description: "Quantidade vendida"
+        tests:
+          - not_null
+      - name: valor_total
+        description: "Valor total da venda"
+      - name: valor_unitario
+        description: "Valor unitário do produto"
+      - name: desconto
+        description: "Desconto aplicado"
+
+  - name: fato_devolucoes
+    description: "Fato de devoluções"
+    columns:
+      - name: sk_produto
+        description: "Chave surrogate do produto"
+      - name: sk_cliente
+        description: "Chave surrogate do cliente"
+      - name: data_devolucao
+        description: "Data da devolução"
+      - name: quantidade_devolvida
+        description: "Quantidade devolvida"
+      - name: valor_devolucao
+        description: "Valor da devolução"
+      - name: motivo_devolucao
+        description: "Motivo da devolução"
+
+  - name: fato_estoque
+    description: "Fato de estoque"
+    columns:
+      - name: sk_produto
+        description: "Chave surrogate do produto"
+      - name: id_armazem
+        description: "Identificador do armazém"
+      - name: nivel_estoque
+        description: "quantidade de produtos no estoque"
+        tests:
+          - not_null
+      - name: ponto_reabastecimento
+        description: "quantidade de produtos que aciona o reabastecimento do estoque"
+      - name: valor_inventario
+        description: "valor total do inventario"
+      - name: ultima_atualizacao
+        description: "data da ultima atualizacao do estoque"
+
